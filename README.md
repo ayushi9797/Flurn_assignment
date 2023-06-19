@@ -131,3 +131,23 @@ Build a Booking Service which allows you to choose seats and book.
 
 
 ```
+
+### Get Router -> Get specific seats
+
+- `http://localhost:8080/seat/648ecc153ef0852b5a1f6e09`
+
+### Response Message
+
+```
+{
+ "message": " 💺 Here Get your specific seats ",
+ "seat": {
+   "_id": "648ecc153ef0852b5a1f6e09",
+   "id": "1",
+   "seat_identifier": "654059941-2",
+   "seat_class": "H",
+   "isBooked": true
+ }
+}
+
+```
