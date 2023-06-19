@@ -151,3 +151,128 @@ Build a Booking Service which allows you to choose seats and book.
 }
 
 ```
+
+## Price Router
+
+### Get Request -> Retrieved all prices
+
+- `http://localhost:8080/price`
+
+### Response Message
+
+```
+{
+  "message": " 💰  Here Get your all price ",
+  "price": [
+    {
+      "_id": "648ed11abd71e10874108e2d",
+      "id": "1",
+      "seat_class": "A",
+      "normal_price": "$397.61",
+      "max_price": "$547.20"
+    },
+    {
+      "_id": "648ed11abd71e10874108e2e",
+      "id": "2",
+      "seat_class": "B",
+      "min_price": "$183.44",
+      "normal_price": "$441.65",
+      "max_price": "$766.96"
+    },
+    {
+      "_id": "648ed11abd71e10874108e2f",
+      "id": "3",
+      "seat_class": "C",
+      "min_price": "$158.47",
+      "normal_price": "$449.40",
+      "max_price": "$678.55"
+    },
+  ]
+}
+```
+
+#### Note :->
+
+● Less than 40% of seats booked - use the min_price, if min_price is not
+available, use normal_price
+● 40% - 60% of seats booked - use the normal_price, if normal_price not
+available, use max_price
+● More than 60% of seats booked - use the max_price, if max_price is not
+available, use normal_price
+
+## Route
+
+`http://localhost:8080/price/648ecc153ef0852b5a1f6e0b`
+
+```
+{
+  "_id": "648ecc153ef0852b5a1f6e0b",
+  "id": "3",
+  "seat_identifier": "554266047-9",
+  "seat_class": "G",
+  "isBooked": true
+}
+
+```
+
+## Response Status
+
+```
+{
+  "message": "  💰  Here Get your  price ",
+  "chargedPrice": "$296.21"
+}
+```
+
+## Booking Routes
+
+- `http://localhost:8080/booking`
+
+## Response Status -> all booking seats
+
+```
+[
+  {
+    "_id": "648ecc153ef0852b5a1f6e0a",
+    "id": "2",
+    "seat_identifier": "186150079-3",
+    "seat_class": "E",
+    "isBooked": true
+  },
+  {
+    "_id": "648ecc153ef0852b5a1f6e0b",
+    "id": "3",
+    "seat_identifier": "554266047-9",
+    "seat_class": "G",
+    "isBooked": true
+  },
+  {
+    "_id": "648ecc153ef0852b5a1f6e0d",
+    "id": "5",
+    "seat_identifier": "113273476-2",
+    "seat_class": "G",
+    "isBooked": true
+  },
+  {
+    "_id": "648ecc153ef0852b5a1f6e0e",
+    "id": "6",
+    "seat_identifier": "006890170-4",
+    "seat_class": "B",
+    "isBooked": true
+  }
+]
+```
+
+## All router
+
+# All routes
+
+| METHOD | ENDPOINT   | DESCRIPTION                                                 | STATUS CODE |
+| ------ | ---------- | ----------------------------------------------------------- | ----------- |
+| Get    | /seat      | This endpoint should allow users to Get all the seats.      | 200         |
+|        |            |
+| GET    | /seat/:id  | This endpoint should return a list of seat with specific id | 200         |
+| Get    | /price/:id | This endpoint should allow to get price by specific id      | 200         |
+| Get    | /price     | This endpoint should allow to get all the price             | 200         |
+| Get    | /booking   | This endpoint should allow to get all booking details.      | 200         |
+|        |
