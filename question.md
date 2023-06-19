@@ -67,6 +67,7 @@ booking.
 # Retrieve Bookings
 
 GET /bookings?userIdentifier=<email or phone number>
+
 Return all bookings created by the user. The API should search by email or phone
 number. Any one has to be provided. Return error if no user identifier is provided.
 

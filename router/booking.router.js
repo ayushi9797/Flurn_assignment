@@ -41,9 +41,10 @@ BookingRouter.get("/booking", async (req, res) => {
         }
         const bookings = new bookingModel(req.body)
         await bookings.save()
-        res.send(bookedseatdata)
+        res.status(201).send({ message: `  💰  Here Get your  booking seats `, bookedseatdata })
     } catch (error) {
         console.log(error.message);
+        res.status(404).send({ message: `error ☹️ IN getting   the  booking : ${error.message}` });
     }
 
 })
