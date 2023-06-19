@@ -99,3 +99,35 @@ Build a Booking Service which allows you to choose seats and book.
 }
 
 ```
+
+# Routes for seat
+
+### Get Router -> Get all seats
+
+- `http://localhost:8080/seat`
+
+### Response of some -> Get all seats
+
+```
+{
+  "message": " 💺 Here Get your all seats ",
+  "seat": [
+    {
+      "_id": "648ecc153ef0852b5a1f6e09",
+      "id": "1",
+      "seat_identifier": "654059941-2",
+      "seat_class": "H",
+      "isBooked": true
+    },
+    {
+      "_id": "648ecc153ef0852b5a1f6e0a",
+      "id": "2",
+      "seat_identifier": "186150079-3",
+      "seat_class": "E",
+      "isBooked": true
+    },
+  ]
+}
+
+
+```
