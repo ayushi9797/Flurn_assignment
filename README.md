@@ -62,10 +62,14 @@ Build a Booking Service which allows you to choose seats and book.
 # Seat Schema
 
 ```
+ {
+
  id: String,
  seat_identifier: String,
  seat_class: String,
  isBooked: Boolean,
+
+ }
 
 
 
@@ -74,9 +78,24 @@ Build a Booking Service which allows you to choose seats and book.
 # Price Schema
 
 ```
+{
     id: String,
     seat_class: String,
     min_price: String,
     normal_price: String,
     max_price: String,
+
+}
+```
+
+# Booking Schema
+
+```
+{
+    name: String,
+    phone: String,
+    seats: Array,
+
+}
+
 ```
