@@ -24,7 +24,7 @@ BookingRouter.use(express.json());
 
 // ! Get Request Handler 
 
-BookingRouter.get("/booking", async (req, res) => {
+BookingRouter.post("/booking", async (req, res) => {
     let { name, phone, seats } = req.body
     try {
 
@@ -50,7 +50,18 @@ BookingRouter.get("/booking", async (req, res) => {
 })
 
 
+BookingRouter.get("/bookings",async(req,res)=>{
+    try {
+        let totalbookings = await bookingModel.find({name:req.query.username})
 
+        console.log(req.query);
+        res.send(totalbookings)
+        
+    } catch (error) {
+        
+    }
+
+})
 
 
 

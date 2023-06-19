@@ -228,6 +228,16 @@ available, use normal_price
 
 - `http://localhost:8080/booking`
 
+```
+{
+    "name": "String",
+    "phone" : "String",
+    "seats" : [10,90,50,60]
+}
+
+
+```
+
 ## Response Status -> all booking seats
 
 ```
@@ -263,16 +273,98 @@ available, use normal_price
 ]
 ```
 
+## GET Route
+
+- `http://localhost:8080/bookings?username=String`
+
+```
+{
+
+
+  "seat_class": "H",
+  "isBooked": true
+}
+
+```
+
+## Response Status
+
+```
+[
+  {
+    "_id": "64900996c941be4f2e17e580",
+    "name": "String",
+    "phone": "String",
+    "seats": [
+      2,
+      3,
+      5,
+      6
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "64900a20ea78dabad54b9f56",
+    "name": "String",
+    "phone": "String",
+    "seats": [
+      2,
+      3,
+      5,
+      6
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "64900bc070b1e8266234534e",
+    "name": "String",
+    "phone": "String",
+    "seats": [
+      2,
+      3,
+      5,
+      6
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "64902b843263208a8ccd3efb",
+    "name": "String",
+    "phone": "String",
+    "seats": [
+      2,
+      3,
+      5,
+      6
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "64905c067c17eb090f800d0a",
+    "name": "String",
+    "phone": "String",
+    "seats": [
+      10,
+      90,
+      50,
+      60
+    ],
+    "__v": 0
+  }
+]
+
+```
+
 ## All router
 
 # All routes
 
-| METHOD | ENDPOINT   | DESCRIPTION                                                 | STATUS CODE |
-| ------ | ---------- | ----------------------------------------------------------- | ----------- |
-| Get    | /seat      | This endpoint should allow users to Get all the seats.      | 200         |
-|        |            |
-| GET    | /seat/:id  | This endpoint should return a list of seat with specific id | 200         |
-| Get    | /price/:id | This endpoint should allow to get price by specific id      | 200         |
-| Get    | /price     | This endpoint should allow to get all the price             | 200         |
-| Get    | /booking   | This endpoint should allow to get all booking details.      | 200         |
-|        |
+| METHOD | ENDPOINT                  | DESCRIPTION                                                 | STATUS CODE |
+| ------ | ------------------------- | ----------------------------------------------------------- | ----------- |
+| Get    | /seat                     | This endpoint should allow users to Get all the seats.      | 200         |
+|        |                           |
+| GET    | /seat/:id                 | This endpoint should return a list of seat with specific id | 200         |
+| Get    | /price/:id                | This endpoint should allow to get price by specific id      | 200         |
+| Get    | /price                    | This endpoint should allow to get all the price             | 200         |
+| POST   | /booking                  | This endpoint should allow to get all booking details.      | 200         |
+| GET    | /bookings?username=String | Return all bookings created by the user. T                  | 200         |
